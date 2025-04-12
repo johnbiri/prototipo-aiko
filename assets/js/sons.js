@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 // Adiciona som de links
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.link00');
@@ -39,6 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         window.location.href = button.href; // Abre na mesma aba
                     }
                 }, clickSound.duration * 1000); // Tempo em milissegundos
+            });
+        }
+    });
+});
+
+// Adiciona som de botão sem redirecionamento
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.link01'); // Seleciona todos os botões .link01
+    
+    buttons.forEach(button => {
+        if (button) {
+            const clickSound = new Audio('assets/aud/click.mp3');
+            
+            button.addEventListener('click', (event) => {
+                event.preventDefault(); // Impede qualquer ação padrão do botão
+                
+                clickSound.currentTime = 0; // Reseta o áudio para o início
+                clickSound.play(); // Toca o áudio
             });
         }
     });

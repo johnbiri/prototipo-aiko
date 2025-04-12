@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>ANDARILHOTECA</title>
+	<link rel="shortcut icon" href="img/ico/icon-192x192.png">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/treinos.css">
+	<link rel="manifest" href="assets/manifest.json">
+</head>
+<body>
+	<!-- Cabeçalho -->
+	<header class="container container-fluid p-2 text-center header1">
+	  <nav class="navbar header1">
+		<div class="container-fluid">
+		  <!-- Logo -->
+		  <a class="navbar-brand" href="#">
+			<img src="img/ico/icon-512x512.png" alt="Ícone do site" class="logo" width="40" height="40">
+		  </a>
+		  <!-- Botão de toggle -->
+		  <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+			<i class="header-toggle bi bi-list fs-1"></i>
+		  </button>
+		</div>
+	  </nav>
+	</header>
+
+	<!-- Tela de carregamento -->
+	<div id="loading-screen">
+		<div class="spinner"></div>
+	</div>
+
+	<!-- Artigo, Conteúdo -->
+	<div>
+		<!-- título e apresentação do iframe -->
+		<div>
+
+			<!-- iframe de vídeo (escondido por padrão) -->
+			<div id="video-container">
+				<div id="player" class="ratio ratio-16x9 vid00">
+					<iframe 
+						id="playlist-iframe"
+						class="vid01"
+						src="https://www.youtube.com/embed/videoseries?list=PLd9ykfMeym3gF7zlDo3kYkNZxFo0UNq4Y&autoplay=1&mute=1&controls=1&rel=0&start=0&modestbranding=1&playsinline=0&fs=1"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+						referrerpolicy="strict-origin-when-cross-origin" 
+						allowfullscreen>
+					</iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<footer>
+		<div class="footer text-center">
+			<p class="text-primary">Andarilhoteca</p>
+			<div>
+				<p><span class="texto-02">“Você tem poder sobre sua mente, não sobre os acontecimentos.” Marco Aurélio</span></p>
+			</div>
+			<p><i class="bi bi-c-circle"></i> JB 2024 - <span id="current-year"></span></p>
+		</div>
+	</footer>
+
+	<!-- area dos projetos -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content modal2">
+				<div class="modal-body modal1">
+					<div>
+						<a href="index.html" target="_self" class="btn d-block mb-2 d-flex align-items-center botao00">
+							<i class="bi bi-house fs-3 me-2"></i> Voltar
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="scripts.js"></script>
+	<script src="assets/js/temas.js"></script>
+	<script src="assets/js/loading.js"></script>
+	<script src="assets/js/treinos.js"></script>
+	<script src="assets/js/sons.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

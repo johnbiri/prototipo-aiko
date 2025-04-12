@@ -4,6 +4,7 @@
 	box-sizing: border-box;
 	color: #fff;
 	border: solid transparent 0px;
+	user-select: none;
 }
 html{
 	scroll-behavior: smooth;
@@ -34,38 +35,45 @@ body::-webkit-scrollbar {
 	border-radius: 0px;
 	text-align: left;
 }
+
 /* formatação de textos */
+.texto03 {
+	color: #b4b4b4;
+}
 .texto04 {
-    color: #777;
+	color: #777;
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	pointer-events: none;
 	user-select: none;
 	cursor: default;
 	outline: none;
 }
+
 .texto05 {
-    color: #ff0;
+  color: #ff0;
 	text-decoration: underline;
 	pointer-events: none;
 	user-select: none;
 	cursor: default;
 	outline: none;
 }
+
 .texto06 {
-    color: #0f0;
+	color: #0f0;
 	pointer-events: none;
 	user-select: none;
 	cursor: default;
 	outline: none;
 }
+
 /* Estilo padrão para os links */
 .link00 {
 	font-family: monospace;
-    color: #666;
-    border: solid #222 1px;
+	color: #666;
+	border: solid #222 1px;
 	background-color: #111;
-    padding: 3px;
-    text-decoration: none;
+	padding: 3px;
+	text-decoration: none;
 	border-radius: 5px;
 }
 /* Alterações quando o usuário passa o mouse ou clica */
