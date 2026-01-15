@@ -528,6 +528,11 @@
 
       <style>
         /* ===== Soluções ===== */
+        #solucoes {
+          --cor-marca: #08435b;        /* azul mais escuro / institucional */
+          --cor-marca-hover: #081f4d;  /* hover ainda mais forte */
+        }
+
         #solucoes .solucoes-wrapper {
           display: grid;
           grid-template-columns: 1fr auto 1fr;
@@ -562,6 +567,28 @@
           box-shadow: 0 18px 40px rgba(0,0,0,0.12);
         }
 
+        /* ===== Botão Saiba Mais (ARRUMADO) ===== */
+        #solucoes .btn-solucoes {
+          display: inline-block;
+          padding: 16px 44px;              /* AQUI está o padding que faltava */
+          background-color: var(--cor-marca);
+          border: none;
+          border-radius: 50px;
+          color: #ffffff;
+          font-size: 1rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease;
+        }
+
+        #solucoes .btn-solucoes:hover {
+          background-color: var(--cor-marca-hover);
+          transform: translateY(-4px);
+          box-shadow: 0 14px 34px rgba(10,42,102,0.45);
+          color: #ffffff;
+        }
+
+        /* ===== Responsivo ===== */
         @media (max-width: 991px) {
           #solucoes .solucoes-wrapper {
             grid-template-columns: 1fr;
@@ -605,7 +632,7 @@
           <!-- IMAGEM CENTRAL -->
           <div class="solucoes-image reveal">
             <img
-              src="assets/img/Imagem-oficial-Solucoes-1024x366.jpg.webp"
+              src="./assets/img/Imagem-oficial-Solucoes-1024x366.jpg.webp"
               alt="Soluções AIKO Consultoria"
             >
           </div>
@@ -625,6 +652,14 @@
           </div>
 
         </div>
+
+        <!-- BOTÃO -->
+        <div class="text-center mt-5 reveal">
+          <a href="#inicio" class="btn-solucoes">
+            Saiba mais
+          </a>
+        </div>
+
       </div>
     </section>
 
