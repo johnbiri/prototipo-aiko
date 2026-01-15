@@ -156,6 +156,30 @@
       font-size: 14px;
       opacity: 0.8;
     }
+
+    /* Seção branca padrão */
+    .section-white {
+      background-color: #ffffff;
+    }
+
+    /* Seção levemente mais escura entre as brancas */
+    .section-light {
+      background-color: #f6f7f9;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(140px);
+      transition:
+        opacity 1.2s ease-out,
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
   </style>
   
 </head>
@@ -175,9 +199,9 @@
     <nav class="navmenu" id="navmenu">
       <div class="navmenu-inner">
         <ul>
-          <li><a href="#sobre-nos"><i class="bi bi-house-door-fill"></i>Início</a></li>
+          <li><a href="#inicio"><i class="bi bi-house-door-fill"></i>Início</a></li>
           <li><a href="#sobre-nos"><i class="bi bi-info-circle-fill"></i>Sobre Nós</a></li>
-          <li><a href="#"><i class="bi bi-lightning-fill"></i>Soluções</a></li>
+          <li><a href="#solucoes"><i class="bi bi-lightning-fill"></i>Soluções</a></li>
           <li><a href="#"><i class="bi bi-people-fill"></i>Clientes</a></li>
           <li><a href="#"><i class="bi bi-journal-text"></i>Blog</a></li>
           <li><a href="#"><i class="bi bi-envelope-fill"></i>Contatos</a></li>
@@ -189,21 +213,48 @@
   <!-- Main -->
   <main id="main">
 
-    <div class="aiko-title py-5 my-5" id="aiko-hero-title">
-      <span class="aiko-main">AIKO</span>
-      <span class="aiko-sub">CONSULTORIA EMPRESARIAL</span>
+    <!-- Início -->
+    <div>
+
+      <section id="inicio" class="inicio-full">
+        <div class="inicio-content">
+          <div class="aiko-title" id="aiko-hero-title">
+            <span class="aiko-main">AIKO</span>
+            <span class="aiko-sub">CONSULTORIA EMPRESARIAL</span>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        #inicio.inicio-full {
+          height: 100vh;          /* exatamente 100% da tela */
+          min-height: 100vh;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+
+          display: flex;
+          align-items: center;    /* centraliza vertical */
+          justify-content: center;/* centraliza horizontal */
+        }
+
+        /* evita o container do bootstrap limitar a altura */
+        .inicio-content {
+          width: 100%;
+          text-align: center;
+        }
+      </style>
+      
     </div>
 
-    <hr>
-
     <!-- Sobre Nós -->
-    <section id="sobre-nos" class="py-5">
+    <section id="sobre-nos" class="py-5 section-light reveal">
       <div class="container pt-5 mt-5">
         <h2 class="text-center mb-5">Sobre Nós</h2>
 
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="card h-100 shadow-sm border-0">
+            <div class="card h-100 shadow-sm border-0 reveal">
               <div class="ratio ratio-16x9">
                 <img src="img/quem-somos1024x575.jpg.webp" class="object-fit-cover" alt="">
               </div>
@@ -223,7 +274,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="card h-100 shadow-sm border-0">
+            <div class="card h-100 shadow-sm border-0 reveal">
               <div class="ratio ratio-16x9">
                 <img src="img/como-fazemos1024x683.jpg.webp" class="object-fit-cover" alt="">
               </div>
@@ -242,7 +293,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="card h-100 shadow-sm border-0">
+            <div class="card h-100 shadow-sm border-0 reveal">
               <div class="ratio ratio-16x9">
                 <img src="img/resultados400x380.jpg.webp" class="object-fit-cover" alt="">
               </div>
@@ -263,7 +314,375 @@
       </div>
     </section>
 
+    <!-- Nossos Consultores -->
+    <section id="nossos-consultores" class="py-5 section-white reveal">
+
+      <style>
+        /* ===== Consultores – Estilo Moderno ===== */
+        #nossos-consultores .consultor-card {
+          background: #ffffff;
+          border-radius: 16px;
+          padding: 32px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        #nossos-consultores .consultor-img {
+          max-width: 170px;
+        }
+
+        #nossos-consultores .consultor-img img {
+          width: 100%;
+          aspect-ratio: 3 / 4;
+          object-fit: cover;
+          border-radius: 14px;
+        }
+
+        #nossos-consultores .consultor-role {
+          display: inline-block;
+          color: #6c757d;
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+
+        #nossos-consultores .consultor-contact {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+
+        #nossos-consultores .consultor-contact a {
+          color: #0d6efd;
+          text-decoration: none;
+          font-weight: 500;
+        }
+
+        #nossos-consultores .consultor-contact a:hover {
+          text-decoration: underline;
+        }
+
+        #nossos-consultores .consultor-contact span {
+          color: #adb5bd;
+        }
+
+        /* ===== Frases Inspiradoras ===== */
+        #nossos-consultores .frase-consultores {
+          font-style: italic;
+          color: #495057;
+        }
+
+        #nossos-consultores .frase-consultores p {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin-bottom: 12px;
+        }
+
+        #nossos-consultores .frase-consultores footer {
+          font-style: normal;
+          font-weight: 600;
+          color: #6c757d;
+        }
+
+        @media (max-width: 767px) {
+          #nossos-consultores .consultor-card {
+            padding: 24px;
+          }
+
+          #nossos-consultores .consultor-img {
+            max-width: 140px;
+          }
+
+          #nossos-consultores .consultor-reverse .consultor-contact {
+            justify-content: flex-start;
+          }
+        }
+      </style>
+
+      <div class="container pt-5">
+        <h2 class="text-center mb-5">Nossos Consultores</h2>
+
+        <!-- CONSULTOR 1 -->
+        <div class="consultor-card mb-5 reveal">
+          <div class="row g-4 align-items-start">
+            <div class="col-md-3">
+              <div class="consultor-img">
+                <img src="/assets/img/foto-gustavo-01.jpg.webp" alt="Gustavo Oliveira">
+              </div>
+            </div>
+
+            <div class="col-md-9">
+              <h4 class="mb-1">Gustavo Oliveira</h4>
+              <span class="consultor-role">Consultor Empresarial Sênior</span>
+
+              <div class="consultor-contact mt-3 mb-4">
+                <a href="mailto:gustavo@aikoconsultoria.com.br">
+                  gustavo@aikoconsultoria.com.br
+                </a>
+                <span>•</span>
+                <a href="tel:+5561981464748">
+                  +55 (61) 9 8146-4748
+                </a>
+              </div>
+
+              <p>
+                Economista com mais de 18 anos de atuação no mercado nacional e internacional,
+                com experiência como executivo nos segmentos de Hotelaria, Construção Civil,
+                Educação, Incorporações e Indústria Química.
+              </p>
+
+              <p>
+                Docente em Instituições de Ensino Superior no Distrito Federal, especialista em
+                Logística (UCB), Teoria da Inflação (FGV), Administração de Pequenas e Médias
+                Empresas (USP) e Finanças Corporativas (CORECON-DF).
+              </p>
+
+              <p>
+                Pós-graduado em Métodos Quantitativos aplicados à Gestão pela UNB.
+                Membro do Conselho Regional de Economia – 11ª Região.
+                Consultor e Instrutor credenciado pelo SEBRAE-DF,
+                APEX/CDT/UNB, FECOMÉRCIO e Universidade de Brasília.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FRASES -->
+        <div class="row justify-content-center my-5 reveal">
+          <div class="col-lg-10 text-center">
+
+            <blockquote class="frase-consultores mb-5">
+              <p>
+                “NO QUE DIZ RESPEITO AO FUTURO EXISTEM TRÊS TIPOS DE PESSOAS:
+                AS QUE O DEIXAM ACONTECER, AS QUE O FAZEM ACONTECER
+                E AS QUE SE PERGUNTAM O QUE ACONTECEU.”
+              </p>
+              <footer>— John M. Richardson Jr.</footer>
+            </blockquote>
+
+          </div>
+        </div>
+
+        <!-- CONSULTOR 2 -->
+        <div class="consultor-card consultor-reverse reveal">
+          <div class="row g-4 align-items-start flex-md-row-reverse">
+            <div class="col-md-3">
+              <div class="consultor-img">
+                <img src="/assets/img/foto-reiciano-01.jpg.webp" alt="Reiciano Batista">
+              </div>
+            </div>
+
+            <div class="col-md-9 text-md-end">
+              <h4 class="mb-1">Reiciano Batista</h4>
+              <span class="consultor-role">Consultor Empresarial Sênior</span>
+
+              <div class="consultor-contact mt-3 mb-4 justify-content-md-end">
+                <a href="mailto:reiciano@aikoconsultoria.com.br">
+                  reiciano@aikoconsultoria.com.br
+                </a>
+                <span>•</span>
+                <a href="tel:+5561981952000">
+                  +55 (61) 9 8195-2000
+                </a>
+              </div>
+
+              <p>
+                Pós-graduado em Gerenciamento de Projetos e graduado em Administração de Empresas.
+                Atuou em múltiplos projetos de Engenharia Civil em Nova York entre 2002 e 2006.
+              </p>
+
+              <p>
+                Atua há mais de 15 anos como gestor nas áreas administrativa, comercial, financeira,
+                gestão de contratos públicos (Licitações), contratos privados e projetos de
+                engenharia de software.
+              </p>
+
+              <p>
+                Especialista em consultorias para adequação à Lei Geral de Proteção de Dados – LGPD.
+                Consultor e Instrutor credenciado pelo SEBRAE-DF.
+                Membro ativo do Conselho Regional de Administração do Distrito Federal – CRADF.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FRASE -->
+        <div class="row justify-content-center my-5 reveal">
+          <div class="col-lg-10 text-center">
+
+            <blockquote class="frase-consultores">
+              <p>
+                “COISAS INCRÍVEIS NO MUNDO DOS NEGÓCIOS NUNCA SÃO FEITAS
+                POR UMA ÚNICA PESSOA, E SIM POR UMA EQUIPE.”
+              </p>
+              <footer>— Steve Jobs</footer>
+            </blockquote>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Soluções -->
+    <section id="solucoes" class="py-5 section-light reveal">
+
+      <style>
+        /* ===== Soluções ===== */
+        #solucoes .solucoes-wrapper {
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          gap: 40px;
+          align-items: center;
+        }
+
+        #solucoes .solucao-item {
+          background: #ffffff;
+          border-radius: 14px;
+          padding: 18px 22px;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+          font-weight: 500;
+          text-align: center;
+          transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        #solucoes .solucao-item:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+        }
+
+        #solucoes .solucoes-col {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        #solucoes .solucoes-image img {
+          max-width: 100%;
+          border-radius: 18px;
+          box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+
+        @media (max-width: 991px) {
+          #solucoes .solucoes-wrapper {
+            grid-template-columns: 1fr;
+            gap: 30px;
+          }
+
+          #solucoes .solucoes-col {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          #solucoes .solucao-item {
+            width: 100%;
+            max-width: 320px;
+          }
+
+          #solucoes .solucoes-image {
+            text-align: center;
+          }
+        }
+      </style>
+
+      <div class="container pt-5 mt-5">
+        <h2 class="text-center mb-5">Soluções</h2>
+
+        <div class="solucoes-wrapper">
+
+          <!-- COLUNA ESQUERDA -->
+          <div class="solucoes-col reveal">
+            <div class="solucao-item">Gestão de Processos de Negócio</div>
+            <div class="solucao-item">Gestão Financeira</div>
+            <div class="solucao-item">
+              Diretrizes para<br>Adequação à LGPD
+            </div>
+            <div class="solucao-item">
+              Gestão Comercial<br>Vendas
+            </div>
+          </div>
+
+          <!-- IMAGEM CENTRAL -->
+          <div class="solucoes-image reveal">
+            <img
+              src="assets/img/Imagem-oficial-Solucoes-1024x366.jpg.webp"
+              alt="Soluções AIKO Consultoria"
+            >
+          </div>
+
+          <!-- COLUNA DIREITA -->
+          <div class="solucoes-col reveal">
+            <div class="solucao-item">Plano de Negócio</div>
+            <div class="solucao-item">
+              Formação de<br>Preço de Venda
+            </div>
+            <div class="solucao-item">
+              Prototipação para<br>Engenharia de Software
+            </div>
+            <div class="solucao-item">
+              Plano de Cargos<br>e Salários
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Botão Voltar ao Topo -->
+  <div id="backToTopWrapper">
+
+    <a href="#inicio" id="backToTop" aria-label="Voltar ao topo">↑</a>
+
+    <style>
+      #backToTopWrapper {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 9999;
+      }
+
+      #backToTop {
+        width: 48px;
+        height: 48px;
+        background: #08435b;
+        color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        text-decoration: none;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      #backToTop.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+    </style>
+
+    <script>
+      (function () {
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+          } else {
+            backToTop.classList.remove('show');
+          }
+        });
+      })();
+    </script>
+
+  </div>
 
   <!-- Footer -->
   <footer id="footer">
@@ -284,6 +703,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
+    /* ===============================
+      MENU MOBILE
+    =============================== */
     const body = document.body;
     const toggleBtn = document.querySelector('.mobile-nav-toggle');
     const navMenu = document.getElementById('navmenu');
@@ -311,22 +733,44 @@
       link.addEventListener('click', closeMenu);
     });
 
-    // Observer do título
+    /* ===============================
+      HEADER APARECE APÓS HERO
+    =============================== */
     const heroTitle = document.getElementById('aiko-hero-title');
     const header = document.getElementById('header');
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) {
-          header.classList.add('show-aiko');
-        } else {
-          header.classList.remove('show-aiko');
-        }
-      },
-      { threshold: 0 }
-    );
+    if (heroTitle && header) {
+      const headerObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) {
+            header.classList.add('show-aiko');
+          } else {
+            header.classList.remove('show-aiko');
+          }
+        },
+        { threshold: 0 }
+      );
 
-    observer.observe(heroTitle);
+      headerObserver.observe(heroTitle);
+    }
+
+    /* ===============================
+      REVEAL SIMPLES DE CONTEÚDO
+    =============================== */
+    const reveals = document.querySelectorAll('.reveal');
+
+    if (reveals.length) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target); // aparece uma vez só
+          }
+        });
+      }, { threshold: 0.1 });
+
+      reveals.forEach(el => revealObserver.observe(el));
+    }
   </script>
 
 </body>
