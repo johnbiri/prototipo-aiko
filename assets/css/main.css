@@ -1,0 +1,194 @@
+/* =======================
+   RESET / BASE
+======================= */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #08435b;
+}
+
+/* =======================
+   HEADER
+======================= */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #ffffff !important;
+  padding: 10px 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header .logo img {
+  height: 50px;
+}
+
+.mobile-nav-toggle {
+  font-size: 34px;
+  color: #08435b;
+  cursor: pointer;
+}
+
+/* =======================
+   OVERLAY DO MENU
+======================= */
+.navmenu {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* fundo transparente */
+  background: transparent;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 2000;
+}
+
+body.mobile-nav-active .navmenu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =======================
+   CONTAINER DO MENU
+======================= */
+.navmenu-inner {
+  background: #ffffff;
+  border: 6px solid #08435b;
+  border-radius: 12px;
+
+  width: 100%;
+  max-width: 360px;
+  margin: auto;
+
+  padding: 28px 26px;
+  box-sizing: border-box;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+  /* animação vindo da direita */
+  transform: translateX(30px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+body.mobile-nav-active .navmenu-inner {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* =======================
+   LISTA
+======================= */
+.navmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =======================
+   ITENS
+======================= */
+.navmenu ul li a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 16px;
+  width: 100%;
+
+  text-decoration: none;
+  font-size: 20px;
+  color: #08435b;
+
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.navmenu ul li a i {
+  font-size: 26px;
+}
+
+.navmenu ul li a:hover {
+  background: rgba(8, 67, 91, 0.08);
+  transform: translateX(4px);
+}
+
+.navmenu ul li.active a {
+  font-weight: 700;
+}
+
+/* =======================
+   DIVISÓRIAS
+======================= */
+.navmenu ul hr {
+  border: 0;
+  height: 4px;
+  background: #08435b;
+  margin: 10px 0;
+}
+
+/* =======================
+   MAIN
+======================= */
+#main {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px; /* evita header cobrir conteúdo */
+}
+
+.object-fit-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer */
+.footer {
+  background: #08435b;
+  color: #fff;
+  padding: 60px 0 30px;
+  margin-top: 80px;
+}
+
+.footer .container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-info {
+  margin-top: 12px;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.footer-info i {
+  margin-right: 6px;
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 14px;
+  opacity: 0.9;
+}

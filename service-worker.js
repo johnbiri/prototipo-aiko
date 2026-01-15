@@ -1,22 +1,22 @@
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('blog-cache').then(cache => {
+    caches.open('v1').then((cache) => {
       return cache.addAll([
         '/',
         '/index.html',
-        '/styles.css',
+        '/assets/css/main.css',
         '/script.js',
-        '/img/ico/icon-192x192.png',
-        '/img/ico/icon-512x512.png'
+        '/projeto-001/assets/img/logos/icon-512x512.png',
+        '/projeto-001/assets/img/logos/icon-1069x1069.png',
       ]);
     })
   );
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
+    caches.match(event.request).then((cachedResponse) => {
+      return cachedResponse || fetch(event.request);
     })
   );
 });

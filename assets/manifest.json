@@ -1,20 +1,21 @@
 {
-  "name": "JB",
-  "short_name": "JB",
-  "start_url": "https://johnbiri.github.io/BLOG/index.html",
+  "name": "Vidraçaria Serrana",
+  "short_name": "Vidraçaria Serrana",
+  "description": "Qualidade e Agilidade para Você",
+  "start_url": "https://johnbiri.github.io/projeto-001/index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#0c4ffe",
+  "theme_color": "#0c4ffe",
   "icons": [
     {
-      "src": "https://johnbiri.github.io/BLOG/img/ico/icon-192x192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "./assets/img/logos/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     },
     {
-      "src": "https://johnbiri.github.io/BLOG/img/ico/icon-512x512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "./assets/img/logos/icon-1069x1069.png",
+      "sizes": "1069x1069",
+      "type": "image/png"
     }
   ]
 }
