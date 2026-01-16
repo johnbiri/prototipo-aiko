@@ -15,122 +15,122 @@
   <style>
     /* ===== Header ===== */
     #header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background: rgba(8, 67, 91, 1) !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        z-index: 1000;
     }
 
     #header .logo img {
-      height: 42px;
+        height: 50px;
+        filter: brightness(0) invert(1); /* transforma qualquer logo escura em branco */
     }
 
     .mobile-nav-toggle {
-      font-size: 32px;
-      color: #08435b;
-      cursor: pointer;
+        font-size: 42px;
+        color: #fff; /* ícone sanduíche branco */
+        cursor: pointer;
     }
 
     /* AIKO que aparece no header ao scroll */
     .header-aiko-text {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.4rem;
-      letter-spacing: 0.35em;
-      font-weight: 300;
-      color: #08435b;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.4rem;
+        letter-spacing: 0.35em;
+        font-weight: 300;
+        color: #fff; /* texto branco */
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
     }
 
     #header.show-aiko .header-aiko-text {
-      opacity: 1;
+        opacity: 1;
     }
 
     /* ===== Menu ===== */
     .navmenu {
-      position: fixed;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0,0,0,0.85);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 2000;
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0,0,0,0.85);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 2000;
     }
 
     body.mobile-nav-active .navmenu {
-      opacity: 1;
-      pointer-events: auto;
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .navmenu-inner {
-      background: #fff;
-      padding: 30px 40px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 360px;
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 360px;
     }
 
     .navmenu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     .navmenu ul li {
-      margin-bottom: 12px;
+        margin-bottom: 12px;
     }
 
     .navmenu ul li a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      color: #08435b;
-      background: #f5f7f8;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #08435b;
+        background: #f5f7f8;
     }
 
     .navmenu ul li a:hover {
-      background: #e6eff4;
+        background: #e6eff4;
     }
 
     /* ===== Título Hero ===== */
     .aiko-title {
-      text-align: center;
-      line-height: 1.1;
+        text-align: center;
+        line-height: 1.1;
     }
 
     .aiko-main {
-      display: block;
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 300;
-      letter-spacing: 0.25em;
-      color: #2f9bb0;
+        display: block;
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 300;
+        letter-spacing: 0.25em;
+        color: #2f9bb0;
     }
 
     .aiko-sub {
-      display: block;
-      margin-top: 12px;
-      font-size: clamp(0.9rem, 2.5vw, 1.4rem);
-      letter-spacing: 0.35em;
-      font-weight: 400;
-      color: #555;
+        display: block;
+        margin-top: 12px;
+        font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+        letter-spacing: 0.35em;
+        font-weight: 400;
+        color: #555;
     }
 
     /* ===== Footer ===== */
@@ -157,16 +157,6 @@
       opacity: 0.8;
     }
 
-    /* Seção branca padrão */
-    .section-white {
-      background-color: #ffffff;
-    }
-
-    /* Seção levemente mais escura entre as brancas */
-    .section-light {
-      background-color: #f6f7f9;
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(140px);
@@ -180,11 +170,103 @@
       transform: translateY(0);
     }
 
+    /* ===== Section Transição ===== */
+    .section-transicao {
+      position: relative;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .section-transicao::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(8, 67, 91, 0.08),
+        transparent
+      );
+      pointer-events: none;
+    }
+
+    .section-transicao img {
+      width: 72px;
+      opacity: 0.9;
+      filter: drop-shadow(0 10px 22px rgba(8, 67, 91, 0.35));
+    }
+
+    @media (max-width: 768px) {
+      .section-transicao {
+        height: 100px;
+      }
+
+      .section-transicao img {
+        width: 56px;
+      }
+    }
+
   </style>
   
 </head>
 
 <body>
+
+  <!-- Preloader -->
+  <div>
+    <div id="loading-screen">
+      <img src="assets/img/logo.png" alt="Logo" id="preloader-logo">
+    </div>
+
+    <style>
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        pointer-events: all;
+      }
+
+      #preloader-logo {
+        width: 80px;
+        height: 80px;
+        animation: spin 1.5s linear infinite, pulse 1.2s ease-in-out infinite alternate;
+      }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes pulse {
+        from { transform: scale(0.9); }
+        to { transform: scale(1.1); }
+      }
+    </style>
+
+    <script>
+      window.addEventListener('load', function() {
+        const loading = document.getElementById('loading-screen');
+        setTimeout(() => {
+          loading.style.transition = 'opacity 0.5s ease';
+          loading.style.opacity = '0';
+          setTimeout(() => {
+            loading.remove();
+          }, 500);
+        }, 1000);
+      });
+    </script>
+  </div>
 
   <!-- Header -->
   <header id="header">
@@ -202,9 +284,9 @@
           <li><a href="#inicio"><i class="bi bi-house-door-fill"></i>Início</a></li>
           <li><a href="#sobre-nos"><i class="bi bi-info-circle-fill"></i>Sobre Nós</a></li>
           <li><a href="#solucoes"><i class="bi bi-lightning-fill"></i>Soluções</a></li>
-          <li><a href="#inicio"><i class="bi bi-people-fill"></i>Clientes</a></li>
+          <li><a href="#clientes"><i class="bi bi-people-fill"></i>Clientes</a></li>
+          <li><a href="#contato"><i class="bi bi-envelope-fill"></i>Contatos</a></li>
           <li><a href="#inicio"><i class="bi bi-journal-text"></i>Blog</a></li>
-          <li><a href="#inicio"><i class="bi bi-envelope-fill"></i>Contatos</a></li>
         </ul>
       </div>
     </nav>
@@ -214,41 +296,216 @@
   <main id="main">
 
     <!-- Início -->
-    <div>
+    <section id="inicio" class="inicio-hero">
 
-      <section id="inicio" class="inicio-full">
-        <div class="inicio-content">
-          <div class="aiko-title" id="aiko-hero-title">
-            <span class="aiko-main">AIKO</span>
-            <span class="aiko-sub">CONSULTORIA EMPRESARIAL</span>
+      <div class="hero-slider" id="heroSlider">
+
+        <div class="hero-slide active" style="background-image: url('./assets/img/banner01.png');">
+          <div class="hero-container">
+            <div class="hero-logo">
+              <h1>AIKO</h1>
+              <p>Consultoria Empresarial</p>
+            </div>
+            <div class="hero-message">
+              <p>Descrição do primeiro slide</p>
+              <a href="#sobre-nos" class="hero-btn">Sobre Nós</a>
+            </div>
           </div>
         </div>
-      </section>
+
+        <div class="hero-slide" style="background-image: url('./assets/img/banner02.png');">
+          <div class="hero-container">
+            <div class="hero-logo">
+              <h1>AIKO</h1>
+              <p>Consultoria Empresarial</p>
+            </div>
+            <div class="hero-message">
+              <p>Descrição do segundo slide</p>
+              <a href="#solucoes" class="hero-btn">Soluções</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-slide" style="background-image: url('./assets/img/banner03.png');">
+          <div class="hero-container">
+            <div class="hero-logo">
+              <h1>AIKO</h1>
+              <p>Consultoria Empresarial</p>
+            </div>
+            <div class="hero-message">
+              <p>Descrição do terceiro slide</p>
+              <a href="#contato" class="hero-btn">Contato</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
       <style>
-        #inicio.inicio-full {
-          height: 100vh;          /* exatamente 100% da tela */
-          min-height: 100vh;
+        /* ===== HERO ===== */
+        #inicio.inicio-hero {
+          height: 100vh;
           width: 100%;
-          margin: 0;
-          padding: 0;
-
-          display: flex;
-          align-items: center;    /* centraliza vertical */
-          justify-content: center;/* centraliza horizontal */
+          overflow: hidden;
+          position: relative;
         }
 
-        /* evita o container do bootstrap limitar a altura */
-        .inicio-content {
+        .hero-slider {
+          position: relative;
           width: 100%;
+          height: 100%;
+        }
+
+        .hero-slide {
+          position: absolute;
+          inset: 0;
+          background-size: cover;
+          background-position: center;
+          opacity: 0;
+          transform: scale(1.05);
+          transition: opacity 1s ease, transform 1.5s ease;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .hero-slide::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.55)
+          );
+          z-index: 1;
+        }
+
+        .hero-slide.active {
+          opacity: 1;
+          transform: scale(1);
+          z-index: 1;
+        }
+
+        .hero-container {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           text-align: center;
+          padding: 0 20px;
+          height: 100%;
+        }
+
+        .hero-logo h1 {
+          font-size: clamp(3rem, 8vw, 6rem);
+          font-weight: 700;
+          letter-spacing: 6px;
+          margin-bottom: 10px;
+          color: #fff;
+        }
+
+        .hero-logo p {
+          font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+          margin-bottom: 40px;
+          color: #fff;
+          opacity: 0.9;
+        }
+
+        .hero-message p {
+          font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+          margin-bottom: 25px;
+          color: #fff;
+          opacity: 0.9;
+        }
+
+        .hero-btn {
+          padding: 16px 42px;
+          border-radius: 40px;
+          background: #08435b;
+          color: #fff;
+          text-decoration: none;
+          font-weight: 600;
+          letter-spacing: 1px;
+          box-shadow: 0 12px 35px rgba(8,67,91,0.45);
+          transition: all 0.3s ease;
+        }
+
+        .hero-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 18px 45px rgba(8,67,91,0.65);
+        }
+
+        @media (max-width: 768px) {
+          .hero-logo h1 {
+            letter-spacing: 3px;
+          }
+          .hero-logo p {
+            margin-bottom: 25px;
+          }
+          .hero-message p {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+          }
         }
       </style>
-      
-    </div>
+
+      <script>
+        (function () {
+          const slides = document.querySelectorAll('#inicio .hero-slide');
+          const slider = document.getElementById('heroSlider');
+          let current = 0;
+          let startX = 0;
+          let interval;
+
+          function showSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            slides[index].classList.add('active');
+            current = index;
+          }
+
+          function nextSlide() {
+            showSlide((current + 1) % slides.length);
+          }
+
+          function prevSlide() {
+            showSlide((current - 1 + slides.length) % slides.length);
+          }
+
+          function startAuto() {
+            interval = setInterval(nextSlide, 20000); // 20s
+          }
+
+          function resetAuto() {
+            clearInterval(interval);
+            startAuto();
+          }
+
+          slider.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+          slider.addEventListener('touchend', e => {
+            const endX = e.changedTouches[0].clientX;
+            if (startX - endX > 60) nextSlide();
+            if (endX - startX > 60) prevSlide();
+            resetAuto();
+          });
+
+          slider.addEventListener('mousedown', e => startX = e.clientX);
+          slider.addEventListener('mouseup', e => {
+            const endX = e.clientX;
+            if (startX - endX > 60) nextSlide();
+            if (endX - startX > 60) prevSlide();
+            resetAuto();
+          });
+
+          startAuto();
+        })();
+      </script>
+
+    </section>
 
     <!-- Sobre Nós -->
-    <section id="sobre-nos" class="py-5 section-light reveal">
+    <section id="sobre-nos" class="py-5 reveal">
       <div class="container pt-5 mt-5">
         <h2 class="text-center mb-5">Sobre Nós</h2>
 
@@ -315,7 +572,7 @@
     </section>
 
     <!-- Nossos Consultores -->
-    <section id="nossos-consultores" class="py-5 section-white reveal">
+    <section id="nossos-consultores" class="py-5 reveal">
 
       <style>
         /* ===== Consultores – Estilo Moderno ===== */
@@ -524,7 +781,7 @@
     </section>
 
     <!-- Soluções -->
-    <section id="solucoes" class="py-5 section-light reveal">
+    <section id="solucoes" class="py-5 reveal">
 
       <style>
         /* ===== Soluções ===== */
@@ -660,6 +917,846 @@
           </a>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Clientes -->
+    <section id="clientes" class="clientes-section reveal">
+      <style>
+        /* ===== BLOQUEIOS UX ===== */
+        #clientes,
+        #clientes * {
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+        }
+
+        #clientes {
+          -webkit-touch-callout: none;
+        }
+
+        /* ===== SECTION ===== */
+        .clientes-section {
+          background: #f8f9fb;
+          padding: 120px 0; /* +20% */
+          overflow: hidden;
+        }
+
+        .clientes-section h2 {
+          text-align: center;
+          font-weight: 600;
+          margin-bottom: 84px; /* +20% */
+        }
+
+        .clientes-wall {
+          display: flex;
+          flex-direction: column;
+          gap: 52px; /* +20% */
+        }
+
+        /* wrapper invisível (sem trilha) */
+        .clientes-row-wrapper {
+          width: 100%;
+          overflow: hidden;
+          cursor: grab;
+          background: transparent;
+        }
+
+        .clientes-row-wrapper:active {
+          cursor: grabbing;
+        }
+
+        /* remove scrollbar */
+        .clientes-row-wrapper::-webkit-scrollbar {
+          display: none;
+        }
+
+        .clientes-row {
+          display: flex;
+          width: max-content;
+          gap: 38px; /* +20% */
+          padding: 12px 0; /* +20% */
+          animation: scroll-left 70s linear infinite;
+          will-change: transform;
+        }
+
+        .clientes-row.reverse {
+          animation-name: scroll-right;
+        }
+
+        /* pausa ao interagir */
+        .clientes-row-wrapper:hover .clientes-row,
+        .clientes-row-wrapper.paused .clientes-row {
+          animation-play-state: paused;
+        }
+
+        /* ===== CARD ===== */
+        .cliente-card {
+          flex: 0 0 auto;
+          width: 216px;   /* 180 +20% */
+          height: 132px;  /* 110 +20% */
+          background: #ffffff;
+          border-radius: 22px; /* +20% */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          box-shadow:
+            0 22px 44px rgba(8, 67, 91, 0.35),
+            0 8px 18px rgba(8, 67, 91, 0.25);
+
+          transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .cliente-card img {
+          max-width: 78%; /* leve ajuste proporcional */
+          max-height: 66px; /* +20% */
+          object-fit: contain;
+          pointer-events: none;
+          -webkit-user-drag: none;
+          user-drag: none;
+        }
+
+        @media (hover:hover) {
+          .cliente-card:hover {
+            transform: translateY(-8px); /* +20% */
+            box-shadow:
+              0 32px 64px rgba(8, 67, 91, 0.45),
+              0 12px 26px rgba(8, 67, 91, 0.35);
+          }
+        }
+
+        @keyframes scroll-left {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+
+        @keyframes scroll-right {
+          from { transform: translateX(-50%); }
+          to { transform: translateX(0); }
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+          .cliente-card {
+            width: 180px; /* 150 +20% */
+            height: 115px; /* 96 +20% */
+          }
+
+          .cliente-card img {
+            max-height: 58px; /* +20% */
+          }
+        }
+      </style>
+
+      <div class="container">
+        <h2>Clientes</h2>
+
+        <div class="clientes-wall">
+
+          <!-- linha 1 -->
+          <div class="clientes-row-wrapper reveal">
+            <div class="clientes-row">
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide01.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide02.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide03.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide04.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide05.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide06.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide07.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide08.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide09.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide10.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide11.png.webp"></div>
+
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide01.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide02.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide03.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide04.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide05.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide06.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide07.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide08.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide09.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide10.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide11.png.webp"></div>
+            </div>
+          </div>
+
+          <!-- linha 2 -->
+          <div class="clientes-row-wrapper reveal">
+            <div class="clientes-row reverse">
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide12.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide13.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide14.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide15.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide16.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide17.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide18.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide19.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide20.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide21.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide22.jpg.webp"></div>
+
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide12.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide13.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide14.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide15.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide16.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide17.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide18.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide19.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide20.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide21.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide22.jpg.webp"></div>
+            </div>
+          </div>
+
+          <!-- linha 3 -->
+          <div class="clientes-row-wrapper reveal">
+            <div class="clientes-row">
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide23.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide24.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide25.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide26.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide27.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide28.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide29.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide30.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide31.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide32.jpg.webp"></div>
+
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide23.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide24.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide25.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide26.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide27.png.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide28.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide29.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide30.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide31.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide32.jpg.webp"></div>
+            </div>
+          </div>
+
+          <!-- linha 4 -->
+          <div class="clientes-row-wrapper reveal">
+            <div class="clientes-row reverse">
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide33.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide34.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide35.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide36.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide37.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide38.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide39.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide40.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide41.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide42.jpg.webp"></div>
+
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide33.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide34.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide35.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide36.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide37.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide38.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide39.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide40.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide41.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/clientes/Slide42.jpg.webp"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        document.querySelector('#clientes').addEventListener('contextmenu', e => {
+          e.preventDefault();
+        });
+
+        document.querySelectorAll('.clientes-row-wrapper').forEach(wrapper => {
+          let isDown = false;
+          let startX;
+          let scrollLeft;
+
+          wrapper.addEventListener('mousedown', e => {
+            isDown = true;
+            wrapper.classList.add('paused');
+            startX = e.pageX;
+            scrollLeft = wrapper.scrollLeft;
+          });
+
+          wrapper.addEventListener('mouseup', () => {
+            isDown = false;
+            wrapper.classList.remove('paused');
+          });
+
+          wrapper.addEventListener('mouseleave', () => {
+            isDown = false;
+            wrapper.classList.remove('paused');
+          });
+
+          wrapper.addEventListener('mousemove', e => {
+            if (!isDown) return;
+            e.preventDefault();
+            const walk = (e.pageX - startX) * 1.2;
+            wrapper.scrollLeft = scrollLeft - walk;
+          });
+
+          wrapper.addEventListener('touchstart', () => {
+            wrapper.classList.add('paused');
+          });
+
+          wrapper.addEventListener('touchend', () => {
+            wrapper.classList.remove('paused');
+          });
+        });
+      </script>
+    </section>
+
+    <!-- Parceiros -->
+    <section id="clientes" class="clientes-section reveal">
+      <style>
+        /* ===== BLOQUEIOS UX ===== */
+        #clientes,
+        #clientes * {
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+        }
+
+        #clientes {
+          -webkit-touch-callout: none;
+        }
+
+        /* ===== SECTION ===== */
+        .clientes-section {
+          background: #f8f9fb;
+          padding: 120px 0;
+          overflow: hidden;
+        }
+
+        .clientes-section h2 {
+          text-align: center;
+          font-weight: 600;
+          margin-bottom: 84px;
+        }
+
+        .clientes-wall {
+          display: flex;
+          flex-direction: column;
+          gap: 52px;
+        }
+
+        .clientes-row-wrapper {
+          width: 100%;
+          overflow: hidden;
+          cursor: grab;
+          background: transparent;
+        }
+
+        .clientes-row-wrapper:active {
+          cursor: grabbing;
+        }
+
+        .clientes-row-wrapper::-webkit-scrollbar {
+          display: none;
+        }
+
+        .clientes-row {
+          display: flex;
+          width: max-content;
+          gap: 38px;
+          padding: 12px 0;
+          animation: scroll-left 70s linear infinite;
+          will-change: transform;
+        }
+
+        .clientes-row-wrapper:hover .clientes-row,
+        .clientes-row-wrapper.paused .clientes-row {
+          animation-play-state: paused;
+        }
+
+        /* ===== CARD ===== */
+        .cliente-card {
+          flex: 0 0 auto;
+          width: 216px;
+          height: 132px;
+          background: #ffffff;
+          border-radius: 22px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          box-shadow:
+            0 22px 44px rgba(8, 67, 91, 0.35),
+            0 8px 18px rgba(8, 67, 91, 0.25);
+
+          transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .cliente-card img {
+          max-width: 78%;
+          max-height: 66px;
+          object-fit: contain;
+          pointer-events: none;
+          -webkit-user-drag: none;
+          user-drag: none;
+        }
+
+        @media (hover:hover) {
+          .cliente-card:hover {
+            transform: translateY(-8px);
+            box-shadow:
+              0 32px 64px rgba(8, 67, 91, 0.45),
+              0 12px 26px rgba(8, 67, 91, 0.35);
+          }
+        }
+
+        @keyframes scroll-left {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 768px) {
+          .cliente-card {
+            width: 180px;
+            height: 115px;
+          }
+
+          .cliente-card img {
+            max-height: 58px;
+          }
+        }
+      </style>
+
+      <div class="container">
+        <h2>Parceiros</h2>
+
+        <div class="clientes-wall">
+
+          <!-- linha única -->
+          <div class="clientes-row-wrapper reveal">
+            <div class="clientes-row">
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide1.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide2.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide3.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide4.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide5.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide6.jpg.webp"></div>
+
+              <!-- duplicado para loop infinito -->
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide1.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide2.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide3.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide4.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide5.jpg.webp"></div>
+              <div class="cliente-card"><img src="./assets/img/parceiros/Slide6.jpg.webp"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        document.querySelector('#clientes').addEventListener('contextmenu', e => {
+          e.preventDefault();
+        });
+
+        document.querySelectorAll('.clientes-row-wrapper').forEach(wrapper => {
+          let isDown = false;
+          let startX;
+          let scrollLeft;
+
+          wrapper.addEventListener('mousedown', e => {
+            isDown = true;
+            wrapper.classList.add('paused');
+            startX = e.pageX;
+            scrollLeft = wrapper.scrollLeft;
+          });
+
+          wrapper.addEventListener('mouseup', () => {
+            isDown = false;
+            wrapper.classList.remove('paused');
+          });
+
+          wrapper.addEventListener('mouseleave', () => {
+            isDown = false;
+            wrapper.classList.remove('paused');
+          });
+
+          wrapper.addEventListener('mousemove', e => {
+            if (!isDown) return;
+            e.preventDefault();
+            const walk = (e.pageX - startX) * 1.2;
+            wrapper.scrollLeft = scrollLeft - walk;
+          });
+
+          wrapper.addEventListener('touchstart', () => {
+            wrapper.classList.add('paused');
+          });
+
+          wrapper.addEventListener('touchend', () => {
+            wrapper.classList.remove('paused');
+          });
+        });
+      </script>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contato-section reveal">
+
+      <style>
+        /* ===== CONTATO – CARD FLUTUANTE ===== */
+        #contato {
+          background: #ffffff;
+          padding: 120px 0;
+          position: relative;
+        }
+
+        #contato h2 {
+          text-align: center;
+          font-weight: 600;
+          margin-bottom: 12px;
+        }
+
+        #contato .contato-subtitle {
+          text-align: center;
+          color: #6c757d;
+          margin-bottom: 80px;
+          font-size: 1.05rem;
+        }
+
+        #contato .contato-card {
+          background: #ffffff;
+          border-radius: 22px;
+          padding: 56px;
+          max-width: 920px;
+          margin: 0 auto;
+          position: relative;
+
+          /* SOMBRA AZUL PREDOMINANTE */
+          box-shadow:
+            0 30px 60px rgba(8, 67, 91, 0.35),
+            0 10px 25px rgba(8, 67, 91, 0.25),
+            0 0 0 1px rgba(8, 67, 91, 0.08);
+        }
+
+        #contato .form-group {
+          margin-bottom: 22px;
+        }
+
+        #contato label {
+          font-weight: 500;
+          margin-bottom: 8px;
+          display: block;
+          color: #08435b;
+        }
+
+        #contato input,
+        #contato textarea {
+          width: 100%;
+          padding: 15px 18px;
+          border-radius: 14px;
+          border: 1px solid #dce6eb;
+          font-size: 0.95rem;
+          transition: all .25s ease;
+        }
+
+        #contato input:focus,
+        #contato textarea:focus {
+          outline: none;
+          border-color: #08435b;
+          box-shadow: 0 0 0 3px rgba(8,67,91,0.2);
+        }
+
+        #contato textarea {
+          min-height: 130px;
+          resize: vertical;
+        }
+
+        #contato .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+
+        #contato .btn-enviar {
+          background: #08435b;
+          color: #ffffff;
+          border: none;
+          padding: 15px 40px;
+          border-radius: 999px;
+          font-weight: 500;
+          font-size: 1rem;
+          transition: all .3s ease;
+        }
+
+        #contato .btn-enviar:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 30px rgba(8,67,91,0.45);
+          background: #062f41;
+        }
+
+        #contato .contato-footer {
+          margin-top: 55px;
+          text-align: center;
+          color: #6c757d;
+          font-size: 0.95rem;
+        }
+
+        #contato .contato-social {
+          margin-top: 18px;
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+        }
+
+        #contato .contato-social a {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          background: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #08435b;
+          font-size: 1.25rem;
+          text-decoration: none;
+
+          box-shadow:
+            0 10px 20px rgba(8,67,91,0.25),
+            0 0 0 1px rgba(8,67,91,0.15);
+
+          transition: all .3s ease;
+        }
+
+        #contato .contato-social a:hover {
+          background: #08435b;
+          color: #ffffff;
+          transform: translateY(-4px);
+          box-shadow:
+            0 18px 35px rgba(8,67,91,0.45);
+        }
+
+        @media (max-width: 767px) {
+          #contato {
+            padding: 90px 0;
+          }
+
+          #contato .contato-card {
+            padding: 36px 24px;
+          }
+
+          #contato .form-row {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+
+      <div class="container">
+        <h2>Entre em Contato</h2>
+        <p class="contato-subtitle">
+          Fale com um de nossos consultores e dê o próximo passo com segurança.
+        </p>
+
+        <div class="contato-card reveal">
+
+          <form>
+            <div class="form-group">
+              <label>Nome do Cliente *</label>
+              <input type="text" required>
+            </div>
+
+            <div class="form-group">
+              <label>Nome da Empresa *</label>
+              <input type="text" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>E-mail *</label>
+                <input type="email" required>
+              </div>
+
+              <div class="form-group">
+                <label>Telefone</label>
+                <input type="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Mensagem *</label>
+              <textarea required></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">
+              Enviar Mensagem
+            </button>
+          </form>
+
+          <div class="contato-footer">
+            Ou fale com a gente pelas redes sociais
+            <div class="contato-social">
+              <a href="https://www.instagram.com/consultoriaaiko/" target="_blank" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Localização -->
+    <section id="localizacao" class="py-5 reveal">
+
+      <style>
+        /* ===== Localização ===== */
+        #localizacao {
+          --cor-marca: #08435b;
+          --cor-marca-hover: #081f4d;
+        }
+
+        #localizacao .localizacao-wrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 56px;
+          align-items: center;
+        }
+
+        #localizacao .localizacao-info h3 {
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+
+        #localizacao .localizacao-info p {
+          color: #555;
+          line-height: 1.7;
+          margin-bottom: 36px;
+        }
+
+        /* ===== MAPA FLUTUANTE ===== */
+        #localizacao .mapa-card {
+          position: relative;
+          border-radius: 26px;
+          background: #ffffff;
+          padding: 14px;
+          box-shadow:
+            0 30px 70px rgba(0,0,0,0.25),
+            0 12px 24px rgba(8,67,91,0.25);
+          transform: translateY(0);
+          transition: transform .4s ease, box-shadow .4s ease;
+        }
+
+        #localizacao .mapa-card iframe {
+          width: 100%;
+          height: 420px;
+          border: 0;
+          border-radius: 18px;
+        }
+
+        /* sensação de flutuação */
+        #localizacao .mapa-card:hover {
+          transform: translateY(-10px);
+          box-shadow:
+            0 40px 90px rgba(0,0,0,0.3),
+            0 18px 36px rgba(8,67,91,0.35);
+        }
+
+        /* leve glow institucional */
+        #localizacao .mapa-card::after {
+          content: "";
+          position: absolute;
+          inset: -2px;
+          border-radius: 28px;
+          background: linear-gradient(
+            135deg,
+            rgba(8,67,91,0.35),
+            rgba(8,67,91,0)
+          );
+          z-index: -1;
+          filter: blur(18px);
+        }
+
+        /* ===== BOTÃO ===== */
+        #localizacao .btn-mapa {
+          display: inline-block;
+          padding: 16px 48px;
+          background-color: var(--cor-marca);
+          border-radius: 50px;
+          color: #ffffff;
+          font-weight: 600;
+          text-decoration: none;
+          transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease;
+        }
+
+        #localizacao .btn-mapa:hover {
+          background-color: var(--cor-marca-hover);
+          transform: translateY(-4px);
+          box-shadow: 0 16px 36px rgba(10,42,102,0.45);
+          color: #ffffff;
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 991px) {
+          #localizacao .localizacao-wrapper {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+
+          #localizacao .localizacao-info {
+            text-align: center;
+          }
+
+          #localizacao .mapa-card iframe {
+            height: 360px;
+          }
+        }
+      </style>
+
+      <div class="container pt-5 mt-5">
+        <h2 class="text-center mb-5">Localização</h2>
+
+        <div class="localizacao-wrapper">
+
+          <!-- TEXTO -->
+          <div class="localizacao-info reveal">
+            <h3>Onde estamos</h3>
+            <p>
+              Nossa localização em Brasília foi pensada estrategicamente para facilitar
+              o atendimento presencial e remoto, mantendo proximidade com empresas que
+              buscam organização, crescimento e decisões mais inteligentes.
+            </p>
+
+            <a
+              href="https://www.google.com/maps/place/QE+3+Bloco+K+-+Guará+I,+Brasília+-+DF,+71020-003"
+              target="_blank"
+              class="btn-mapa"
+            >
+              Ver mapa ampliado
+            </a>
+          </div>
+
+          <!-- MAPA -->
+          <div class="mapa-card reveal">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d61420.63856601862!2d-47.972308!3d-15.815028000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a31b9f609dcd7%3A0xaf4f4a5975ec4dcd!2sQE%203%20B.%20K%20-%20Guar%C3%A1%20I%20QE%203%20-%20Guar%C3%A1%2C%20Bras%C3%ADlia%20-%20DF%2C%2071020-003%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1768583736474!5m2!1spt-BR!2sus"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+        </div>
       </div>
     </section>
 
