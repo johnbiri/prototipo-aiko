@@ -41,20 +41,23 @@
 
     /* AIKO que aparece no header ao scroll */
     .header-aiko-text {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 1.4rem;
-        letter-spacing: 0.35em;
-        font-weight: 300;
-        color: #fff; /* texto branco */
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
+      position: fixed; /* agora fica relativo à viewport */
+      top: 20px;       /* distância do topo da página */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.4rem;
+      letter-spacing: 0.35em;
+      font-weight: 300;
+      color: #fff;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 9999; /* fica sobre tudo */
     }
 
     #header.show-aiko .header-aiko-text {
-        opacity: 1;
+      opacity: 1;
+      transform: translateX(-50%); /* só centraliza horizontal */
     }
 
     /* ===== Menu ===== */
@@ -274,6 +277,7 @@
       <img src="assets/img/logo.png" alt="Logo AIKO">
     </a>
 
+    <!-- AIKO que aparece depois do hero -->
     <span class="header-aiko-text">AIKO</span>
 
     <i class="bi bi-list mobile-nav-toggle"></i>
@@ -290,6 +294,22 @@
         </ul>
       </div>
     </nav>
+
+    <script>
+      // Mostra o AIKO no header só depois do hero
+      document.addEventListener("scroll", () => {
+        const hero = document.getElementById("inicio");
+        const header = document.getElementById("header");
+        const heroBottom = hero.offsetTop + hero.offsetHeight;
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        if (scrollY > heroBottom - 50) { // ajusta a sensibilidade
+          header.classList.add("show-aiko");
+        } else {
+          header.classList.remove("show-aiko");
+        }
+      });
+    </script>
   </header>
 
   <!-- Main -->
@@ -307,7 +327,7 @@
               <p>Consultoria Empresarial</p>
             </div>
             <div class="hero-message">
-              <p>Descrição do primeiro slide</p>
+              <p>Conheça quem somos e como podemos transformar seu negócio com experiência e dedicação.</p>
               <a href="#sobre-nos" class="hero-btn">Sobre Nós</a>
             </div>
           </div>
@@ -320,7 +340,7 @@
               <p>Consultoria Empresarial</p>
             </div>
             <div class="hero-message">
-              <p>Descrição do segundo slide</p>
+              <p>Descubra nossas soluções personalizadas que ajudam sua empresa a crescer de forma inteligente.</p>
               <a href="#solucoes" class="hero-btn">Soluções</a>
             </div>
           </div>
@@ -333,7 +353,7 @@
               <p>Consultoria Empresarial</p>
             </div>
             <div class="hero-message">
-              <p>Descrição do terceiro slide</p>
+              <p>Fale com a gente! Estamos prontos para tirar dúvidas e criar oportunidades juntos.</p>
               <a href="#contato" class="hero-btn">Contato</a>
             </div>
           </div>
