@@ -287,6 +287,7 @@
         <ul>
           <li><a href="#inicio"><i class="bi bi-house-door-fill"></i>Início</a></li>
           <li><a href="#sobre-nos"><i class="bi bi-info-circle-fill"></i>Sobre Nós</a></li>
+          <li><a href="#software"><i class="bi bi-code-slash"></i>Nosso Software</a></li>
           <li><a href="#solucoes"><i class="bi bi-lightning-fill"></i>Soluções</a></li>
           <li><a href="#clientes"><i class="bi bi-people-fill"></i>Clientes</a></li>
           <li><a href="#contato"><i class="bi bi-envelope-fill"></i>Contatos</a></li>
@@ -525,35 +526,108 @@
     </section>
 
     <!-- Sobre Nós -->
-    <section id="sobre-nos" class="py-5 reveal">
-      <div class="container pt-5 mt-5">
-        <h2 class="text-center mb-5">Sobre Nós</h2>
+    <section id="sobre-nos" class="sobre-section reveal">
+
+      <style>
+        /* ===== SOBRE NÓS – CARDS FLUTUANTES ===== */
+        #sobre-nos {
+          background: #ffffff;
+          padding: 120px 0;
+          position: relative;
+        }
+
+        #sobre-nos h2 {
+          text-align: center;
+          font-weight: 600;
+          margin-bottom: 70px;
+        }
+
+        #sobre-nos .sobre-card {
+          background: #ffffff;
+          border-radius: 22px;
+          overflow: hidden;
+          height: 100%;
+          transition: all .35s ease;
+
+          box-shadow:
+            0 25px 55px rgba(8, 67, 91, 0.30),
+            0 8px 20px rgba(8, 67, 91, 0.20),
+            0 0 0 1px rgba(8, 67, 91, 0.08);
+        }
+
+        #sobre-nos .sobre-card:hover {
+          transform: translateY(-8px);
+          box-shadow:
+            0 40px 80px rgba(8, 67, 91, 0.45),
+            0 15px 35px rgba(8, 67, 91, 0.30);
+        }
+
+        #sobre-nos .sobre-card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform .4s ease;
+        }
+
+        #sobre-nos .sobre-card:hover img {
+          transform: scale(1.05);
+        }
+
+        #sobre-nos .card-body {
+          padding: 32px;
+        }
+
+        #sobre-nos h5 {
+          font-weight: 600;
+          color: #08435b;
+          margin-bottom: 14px;
+        }
+
+        #sobre-nos p {
+          font-size: 0.95rem;
+          color: #555;
+          line-height: 1.6;
+        }
+
+        @media (max-width: 767px) {
+          #sobre-nos {
+            padding: 90px 0;
+          }
+
+          #sobre-nos .card-body {
+            padding: 26px 22px;
+          }
+        }
+      </style>
+
+      <div class="container">
+        <h2>Sobre Nós</h2>
 
         <div class="row g-4">
+
           <div class="col-md-4">
-            <div class="card h-100 shadow-sm border-0 reveal">
+            <div class="sobre-card reveal">
               <div class="ratio ratio-16x9">
-                <img src="img/quem-somos1024x575.jpg.webp" class="object-fit-cover" alt="">
+                <img src="img/quem-somos1024x575.jpg.webp" alt="">
               </div>
               <div class="card-body">
                 <h5>Quem Somos</h5>
                 <p>
-                  A <strong>AIKO Consultoria</strong> é uma empresa especializada em
-                  <strong>Estratégia e Gestão Empresarial</strong>, com foco no aumento
-                  de performance, eficiência operacional e sustentabilidade dos negócios.
+                  A AIKO Consultoria é uma empresa especializada em Estratégia e Gestão Empresarial,
+                  com foco no aumento de performance, eficiência operacional e sustentabilidade dos negócios.
                 </p>
                 <p>
-                  Atuamos lado a lado com empresários e gestores, oferecendo soluções
-                  personalizadas e práticas, alinhadas à realidade de cada organização.
+                  Atuamos lado a lado com empresários e gestores, oferecendo soluções personalizadas
+                  e práticas, alinhadas à realidade de cada organização.
                 </p>
               </div>
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="card h-100 shadow-sm border-0 reveal">
+            <div class="sobre-card reveal">
               <div class="ratio ratio-16x9">
-                <img src="img/como-fazemos1024x683.jpg.webp" class="object-fit-cover" alt="">
+                <img src="img/como-fazemos1024x683.jpg.webp" alt="">
               </div>
               <div class="card-body">
                 <h5>Como Fazemos</h5>
@@ -570,9 +644,9 @@
           </div>
 
           <div class="col-md-4">
-            <div class="card h-100 shadow-sm border-0 reveal">
+            <div class="sobre-card reveal">
               <div class="ratio ratio-16x9">
-                <img src="img/resultados400x380.jpg.webp" class="object-fit-cover" alt="">
+                <img src="img/resultados400x380.jpg.webp" alt="">
               </div>
               <div class="card-body">
                 <h5>Resultados</h5>
@@ -587,22 +661,369 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
+
+    </section>
+
+    <!-- Software -->
+    <section id="software" class="reveal">
+
+      <style>
+      #dapic-software {
+        padding: 120px 0;
+      }
+
+      #dapic-software h2 {
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: #08435b;
+      }
+
+      #dapic-software h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #08435b;
+      }
+
+      #dapic-software p,
+      #dapic-software li {
+        color: #4a5d6a;
+        font-size: .96rem;
+        line-height: 1.65;
+      }
+
+      /* INTRO */
+      .dapic-intro {
+        text-align: center;
+        max-width: 820px;
+        margin: 0 auto 80px;
+      }
+
+      .dapic-intro img {
+        max-width: 220px;
+        margin: 24px 0;
+      }
+
+      /* CARD PADRÃO */
+      .dapic-card {
+        background: #fff;
+        border-radius: 28px;
+        padding: 56px;
+        margin-bottom: 48px;
+        box-shadow: 0 18px 40px rgba(8,67,91,.18);
+      }
+
+      @media (max-width: 992px) {
+        .dapic-card {
+          padding: 32px 22px;
+        }
+      }
+
+      .dapic-card:last-child {
+        margin-bottom: 0;
+      }
+
+      .dapic-card.center {
+        text-align: center;
+      }
+
+      /* BOTÃO */
+      .btn-dapic {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 14px 30px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #08435b, #0b5d7d);
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        transition: .3s;
+      }
+
+      .btn-dapic:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 36px rgba(8,67,91,.45);
+        color: #fff;
+      }
+
+      /* INTEGRAÇÕES */
+      .integration-box {
+        width: 220px;
+        height: 120px;
+        margin: 30px auto;
+        background: #f7f9fb;
+        border-radius: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .integration-box img {
+        max-width: 70%;
+        max-height: 60px;
+        transition: opacity .5s ease;
+      }
+
+      /* BENEFÍCIOS */
+      .benefits {
+        list-style: none;
+        padding: 0;
+        margin: 24px auto;
+        max-width: 520px;
+        text-align: left;
+      }
+
+      .benefits li {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .benefits li span {
+        color: #1fa36a;
+        font-weight: 700;
+      }
+
+      /* VÍDEO */
+      .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+        border-radius: 26px;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .video-wrapper iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .video-info {
+        margin-top: 24px;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .video-controls {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 30px;
+      }
+
+      .video-nav {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #08435b;
+        color: #fff;
+        border: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+        transition: .3s;
+      }
+
+      .video-nav:hover {
+        transform: scale(1.1);
+        background: #062f41;
+      }
+      </style>
+
+      <div class="container" id="dapic-software">
+
+        <!-- INTRO -->
+        <div class="dapic-intro">
+          <h2>Apresentando</h2>
+          <img src="assets/img/dapic.svg" alt="Dapic ERP">
+        </div>
+
+        <!-- CARD 1 – APRESENTAÇÃO -->
+        <div class="dapic-card center reveal">
+          <p>
+            Desenvolvido pela <strong>WebPic</strong>, empresa especializada em soluções
+            tecnológicas para o setor têxtil, o <strong>Dapic</strong> é um sistema ERP completo
+            para confecções e lojas de roupas que precisam de mais controle, agilidade
+            e crescimento. Ele centraliza estoque, produção, vendas, faturamento e
+            emissão de notas fiscais em uma única plataforma simples, rápida e
+            confiável, pensada exclusivamente para a realidade do mercado têxtil.
+          </p>
+        </div>
+
+        <!-- CARD 2 – INTEGRAÇÕES -->
+        <div class="dapic-card center reveal">
+          <h3>Integrações que impulsionam sua operação</h3>
+
+          <p class="mt-3">
+            O Dapic é integrado a marketplaces, e-commerce, RFID,
+            forças de venda e soluções externas, garantindo agilidade
+            e controle total da operação.
+          </p>
+
+          <div class="integration-box">
+            <img id="integrationLogo"
+              src="https://webpic.com.br/assets/img/commom/audaces@2x.png">
+          </div>
+
+          <a href="https://webpic.com.br/integracoes" class="btn-dapic mt-3">
+            Ver todas as integrações
+          </a>
+        </div>
+
+        <!-- CARD 3 – PLANOS -->
+        <div class="dapic-card center reveal">
+          <h3>Planos acessíveis para crescer no seu ritmo</h3>
+
+          <p class="mt-3">
+            Comece com o plano ideal para sua empresa e evolua conforme o negócio cresce.
+          </p>
+
+          <h4 style="color:#08435b;font-weight:800;margin-top:20px;">
+            A partir de R$ 499 / mês*
+          </h4>
+
+          <ul class="benefits">
+            <li><span>✔</span> Suporte on-line</li>
+            <li><span>✔</span> Múltiplos estoques</li>
+            <li><span>✔</span> Curva ABC</li>
+            <li><span>✔</span> Banco de dados ilimitado</li>
+            <li><span>✔</span> Integrações</li>
+            <li><span>✔</span> Relatórios B.I</li>
+          </ul>
+
+          <a href="https://webpic.com.br/planos" class="btn-dapic">
+            Ver todos os planos
+          </a>
+        </div>
+
+        <!-- CARD 4 – VÍDEOS -->
+        <div class="dapic-card reveal">
+          <div class="video-wrapper">
+            <iframe id="videoFrame"></iframe>
+          </div>
+
+          <div class="video-info">
+            <h5 id="videoTitle"></h5>
+            <p id="videoDesc"></p>
+          </div>
+
+          <div class="video-controls">
+            <button class="video-nav" onclick="prevVideo()">❮</button>
+            <button class="video-nav" onclick="nextVideo()">❯</button>
+          </div>
+        </div>
+
+      </div>
+
+      <script>
+      const logos = [
+        "https://webpic.com.br/assets/img/commom/audaces@2x.png",
+        "https://webpic.com.br/assets/img/commom/mercado%20livre@2x.png",
+        "https://webpic.com.br/assets/img/commom/itag@2x.png"
+      ];
+
+      let i = 0;
+      const logo = document.getElementById("integrationLogo");
+
+      setInterval(() => {
+        logo.style.opacity = 0;
+        setTimeout(() => {
+          i = (i + 1) % logos.length;
+          logo.src = logos[i];
+          logo.style.opacity = 1;
+        }, 500);
+      }, 2500);
+
+      const videos = [
+        {
+          url: "https://player.vimeo.com/video/1105858268?h=fe8fc2a12a",
+          title: "Pedro | Peixote Kids",
+          desc: "Depoimento real de quem usa o Dapic no dia a dia da confecção."
+        },
+        {
+          url: "https://player.vimeo.com/video/1105858094?h=bbd03af276",
+          title: "Larissa | Kadikê",
+          desc: "Veja como o Dapic ajuda na organização e no controle da operação."
+        },
+        {
+          url: "https://player.vimeo.com/video/1105857827?h=bbdd4d034e",
+          title: "Paulo | Distinto",
+          desc: "Como o Dapic impactou a gestão e o crescimento do negócio."
+        }
+      ];
+
+      let current = 0;
+      const frame = document.getElementById("videoFrame");
+      const title = document.getElementById("videoTitle");
+      const desc = document.getElementById("videoDesc");
+
+      function loadVideo() {
+        frame.src = videos[current].url;
+        title.textContent = videos[current].title;
+        desc.textContent = videos[current].desc;
+      }
+
+      function nextVideo() {
+        current = (current + 1) % videos.length;
+        loadVideo();
+      }
+
+      function prevVideo() {
+        current = (current - 1 + videos.length) % videos.length;
+        loadVideo();
+      }
+
+      loadVideo();
+      </script>
+
     </section>
 
     <!-- Nossos Consultores -->
     <section id="nossos-consultores" class="py-5 reveal">
 
       <style>
-        /* ===== Consultores – Estilo Moderno ===== */
-        #nossos-consultores .consultor-card {
+        /* ===== NOSSOS CONSULTORES – PADRÃO AIKO ===== */
+        #nossos-consultores {
           background: #ffffff;
-          border-radius: 16px;
-          padding: 32px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+          padding: 120px 0;
+          position: relative;
         }
 
+        #nossos-consultores h2 {
+          text-align: center;
+          font-weight: 600;
+          margin-bottom: 80px;
+        }
+
+        /* Card do consultor */
+        #nossos-consultores .consultor-card {
+          background: #ffffff;
+          border-radius: 22px;
+          padding: 40px;
+          transition: all .35s ease;
+
+          box-shadow:
+            0 25px 55px rgba(8, 67, 91, 0.30),
+            0 8px 20px rgba(8, 67, 91, 0.20),
+            0 0 0 1px rgba(8, 67, 91, 0.08);
+        }
+
+        #nossos-consultores .consultor-card:hover {
+          transform: translateY(-6px);
+          box-shadow:
+            0 40px 80px rgba(8, 67, 91, 0.45),
+            0 15px 35px rgba(8, 67, 91, 0.30);
+        }
+
+        /* Imagem */
         #nossos-consultores .consultor-img {
           max-width: 170px;
         }
@@ -611,9 +1032,10 @@
           width: 100%;
           aspect-ratio: 3 / 4;
           object-fit: cover;
-          border-radius: 14px;
+          border-radius: 18px;
         }
 
+        /* Cargo */
         #nossos-consultores .consultor-role {
           display: inline-block;
           color: #6c757d;
@@ -621,6 +1043,7 @@
           margin-bottom: 8px;
         }
 
+        /* Contatos */
         #nossos-consultores .consultor-contact {
           display: flex;
           gap: 12px;
@@ -629,7 +1052,7 @@
         }
 
         #nossos-consultores .consultor-contact a {
-          color: #0d6efd;
+          color: #08435b;
           text-decoration: none;
           font-weight: 500;
         }
@@ -642,7 +1065,7 @@
           color: #adb5bd;
         }
 
-        /* ===== Frases Inspiradoras ===== */
+        /* Frases */
         #nossos-consultores .frase-consultores {
           font-style: italic;
           color: #495057;
@@ -661,8 +1084,12 @@
         }
 
         @media (max-width: 767px) {
+          #nossos-consultores {
+            padding: 90px 0;
+          }
+
           #nossos-consultores .consultor-card {
-            padding: 24px;
+            padding: 28px 24px;
           }
 
           #nossos-consultores .consultor-img {
@@ -676,7 +1103,7 @@
       </style>
 
       <div class="container pt-5">
-        <h2 class="text-center mb-5">Nossos Consultores</h2>
+        <h2>Nossos Consultores</h2>
 
         <!-- CONSULTOR 1 -->
         <div class="consultor-card mb-5 reveal">
@@ -723,10 +1150,9 @@
           </div>
         </div>
 
-        <!-- FRASES -->
+        <!-- FRASE -->
         <div class="row justify-content-center my-5 reveal">
           <div class="col-lg-10 text-center">
-
             <blockquote class="frase-consultores mb-5">
               <p>
                 “NO QUE DIZ RESPEITO AO FUTURO EXISTEM TRÊS TIPOS DE PESSOAS:
@@ -735,7 +1161,6 @@
               </p>
               <footer>— John M. Richardson Jr.</footer>
             </blockquote>
-
           </div>
         </div>
 
@@ -785,7 +1210,6 @@
         <!-- FRASE -->
         <div class="row justify-content-center my-5 reveal">
           <div class="col-lg-10 text-center">
-
             <blockquote class="frase-consultores">
               <p>
                 “COISAS INCRÍVEIS NO MUNDO DOS NEGÓCIOS NUNCA SÃO FEITAS
@@ -793,7 +1217,6 @@
               </p>
               <footer>— Steve Jobs</footer>
             </blockquote>
-
           </div>
         </div>
 
@@ -804,10 +1227,18 @@
     <section id="solucoes" class="py-5 reveal">
 
       <style>
-        /* ===== Soluções ===== */
+        /* ===== SOLUÇÕES – PADRÃO AIKO ===== */
         #solucoes {
-          --cor-marca: #08435b;        /* azul mais escuro / institucional */
-          --cor-marca-hover: #081f4d;  /* hover ainda mais forte */
+          --cor-marca: #08435b;
+          --cor-marca-hover: #081f4d;
+          background: #ffffff;
+          padding: 120px 0;
+        }
+
+        #solucoes h2 {
+          text-align: center;
+          font-weight: 600;
+          margin-bottom: 70px;
         }
 
         #solucoes .solucoes-wrapper {
@@ -817,37 +1248,45 @@
           align-items: center;
         }
 
-        #solucoes .solucao-item {
-          background: #ffffff;
-          border-radius: 14px;
-          padding: 18px 22px;
-          box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-          font-weight: 500;
-          text-align: center;
-          transition: transform .3s ease, box-shadow .3s ease;
-        }
-
-        #solucoes .solucao-item:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 14px 32px rgba(0,0,0,0.08);
-        }
-
         #solucoes .solucoes-col {
           display: flex;
           flex-direction: column;
           gap: 20px;
         }
 
-        #solucoes .solucoes-image img {
-          max-width: 100%;
-          border-radius: 18px;
-          box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        #solucoes .solucao-item {
+          background: #ffffff;
+          border-radius: 22px;
+          padding: 18px 22px;
+          font-weight: 500;
+          text-align: center;
+          transition: transform .35s ease, box-shadow .35s ease;
+
+          /* sombra azul estilo AIKO */
+          box-shadow:
+            0 20px 50px rgba(8, 67, 91, 0.25),
+            0 8px 20px rgba(8, 67, 91, 0.15),
+            0 0 0 1px rgba(8, 67, 91, 0.08);
         }
 
-        /* ===== Botão Saiba Mais (ARRUMADO) ===== */
+        #solucoes .solucao-item:hover {
+          transform: translateY(-6px);
+          box-shadow:
+            0 35px 80px rgba(8, 67, 91, 0.38),
+            0 15px 35px rgba(8, 67, 91, 0.25);
+        }
+
+        #solucoes .solucoes-image img {
+          max-width: 100%;
+          border-radius: 22px;
+          box-shadow:
+            0 25px 55px rgba(8, 67, 91, 0.28),
+            0 12px 30px rgba(8, 67, 91, 0.18);
+        }
+
         #solucoes .btn-solucoes {
           display: inline-block;
-          padding: 16px 44px;              /* AQUI está o padding que faltava */
+          padding: 16px 44px;
           background-color: var(--cor-marca);
           border: none;
           border-radius: 50px;
@@ -861,11 +1300,10 @@
         #solucoes .btn-solucoes:hover {
           background-color: var(--cor-marca-hover);
           transform: translateY(-4px);
-          box-shadow: 0 14px 34px rgba(10,42,102,0.45);
+          box-shadow: 0 14px 34px rgba(8,67,91,0.45);
           color: #ffffff;
         }
 
-        /* ===== Responsivo ===== */
         @media (max-width: 991px) {
           #solucoes .solucoes-wrapper {
             grid-template-columns: 1fr;
@@ -942,6 +1380,7 @@
 
     <!-- Clientes -->
     <section id="clientes" class="clientes-section reveal">
+
       <style>
         /* ===== BLOQUEIOS UX ===== */
         #clientes,
@@ -958,7 +1397,6 @@
 
         /* ===== SECTION ===== */
         .clientes-section {
-          background: #f8f9fb;
           padding: 120px 0; /* +20% */
           overflow: hidden;
         }
@@ -1035,7 +1473,6 @@
           object-fit: contain;
           pointer-events: none;
           -webkit-user-drag: none;
-          user-drag: none;
         }
 
         @media (hover:hover) {
@@ -1233,10 +1670,12 @@
           });
         });
       </script>
+
     </section>
 
     <!-- Parceiros -->
     <section id="clientes" class="clientes-section reveal">
+
       <style>
         /* ===== BLOQUEIOS UX ===== */
         #clientes,
@@ -1323,7 +1762,6 @@
           object-fit: contain;
           pointer-events: none;
           -webkit-user-drag: none;
-          user-drag: none;
         }
 
         @media (hover:hover) {
@@ -1423,6 +1861,7 @@
           });
         });
       </script>
+
     </section>
 
     <!-- Contato -->
@@ -1634,6 +2073,7 @@
 
         </div>
       </div>
+      
     </section>
 
     <!-- Localização -->
